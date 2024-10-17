@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100"
+style="border:1px solid #c3c3c3;">
+Your browser does not support the canvas element.
+</canvas>
+
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+//text
+
+ctx.fillText("Y", 90, 10);
+ctx.fillText("X",190, 45);
+ctx.fillText("20",105, 10);
+ctx.fillText("20",185, 60);
+ctx.fillText("-20",5, 60);
+ctx.fillText("-20",105, 95);
+
+//lines
+ctx.moveTo(100,0);
+ctx.lineTo(100,100);
+ctx.moveTo(0,50);
+ctx.lineTo(200,50);
+ctx.stroke();
+
+//vectors
+//ctx.moveTo(100,50);
+//ctx.lineTo(115,45);
+//ctx.fillText("v1",120, 40);
+
+for (let i = -6; i <= 0; i++) {
+	ctx.moveTo(100,50)
+	ctx.lineTo((100-(5*-i*3)),(50+(5*-i*2)))
+}
+
+for (let i = 1; i <= 6; i++) {
+	ctx.moveTo(100,50)
+	ctx.lineTo((100+(5*i*3)),(50-(5*i*2)))
+}
+ctx.stroke();
+</script>
+
+<h1>v1=[3,2]</h1>
+<h1>lin(v1; Z) = lin{v1; [-6,6]∩ Z}</h1>
+
+</body>
+</html>
